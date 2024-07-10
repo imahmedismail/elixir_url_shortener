@@ -1,0 +1,8 @@
+<form method="post" action="/shorten_url">
+  <input type="hidden" name="_csrf_token" value={Plug.CSRFProtection.get_csrf_token()}/>
+  <input type="text" name="original_url"/>
+  <button type="submit">Shorten</button>
+</form>
+<%= if @shortened_url do %>
+  <p>Shortened URL: <%= @shortened_url %></p>
+<% end %>
